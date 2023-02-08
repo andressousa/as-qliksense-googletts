@@ -18,6 +18,20 @@ AS Google TTS is a visualization extension for Qlik Sense that converts some tex
 8. Optionally insert a measure with a text; 
 9. That's all.
 
-## Important
-
-You will need to request an API Key from [Google Cloud Plataform](https://cloud.google.com/text-to-speech?hl=pt-br).
+## Audio Options
+  [Google Cloud Plataform](https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize#AudioConfig)
+  
+  - **API Key:** API Key from [Google Cloud Plataform](https://cloud.google.com/text-to-speech);
+  - **Audio Encoding**;
+  - **Pitch**;
+  - **Speaking Rate**;
+  - **Volume Gain Db**;
+  - **Language**;
+  - **Reported Usage**;
+  - **Gender**;
+  - **Effects Profile**;
+  
+  
+## Other Options
+  - **Show measure text**;
+  - **Propagate audio player**;
