@@ -12,7 +12,7 @@ AS Google TTS is a visualization extension for Qlik Sense that converts some tex
 2. Install extension following [Qlik Help](https://help.qlik.com/en-US/sense-developer/November2022/Subsystems/Extensions/Content/Sense_Extensions/Howtos/deploy-extensions.htm) instructions;
 3. Open the App;
 4. Go to Custom objects into [Assets panel](https://help.qlik.com/en-US/sense/November2022/Subsystems/Hub/Content/Sense_Hub/Assets/assets-panel.htm);
-5. Open Extensions tab, then drag & drop AS Flipcard to the sheet;
+5. Open Extensions tab, then drag & drop extension to the sheet;
 6. Configure all available [Google TTS parameters](https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize);
 7. Enable propagate option to read Title, Subtitle and Footnote of all sheet objects;
 8. Optionally insert a measure with a text; 
