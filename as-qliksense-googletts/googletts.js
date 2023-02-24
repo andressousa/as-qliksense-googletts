@@ -70,10 +70,10 @@ function(
 				return;
 	    	}else{
 
+				$element.append('<div qv-extension><p class="googleTTSText"></p><button type="button" class="lui-button googleTTSButton"><span class="lui-icon lui-icon--play"></span></button></div>');
+
 	    		setTimeout( () => {
 				    loadAPIClient( layout.apiKey );
-	    		
-					$element.append('<div qv-extension><p id="googleTTSText"></p><button type="button" class="lui-button googleTTSButton"><span class="lui-icon lui-icon--play"></span></button></div>');
 
 			    	//propagate player to all objects
 					if( 'Y' == layout.propagatePlayer && '' !== layout.apiKey ){
@@ -114,18 +114,18 @@ function(
 	 			
 		    	//show/hide main text
 				if( 'N' == layout.showText ){
-					$('body').find('#googleTTSText').hide();
+					$element.find('.googleTTSText').hide();
 				}else{
-					$('body').find('#googleTTSText').show();
+					$element.find('.googleTTSText').show();
 				}
 
 				//set main text
-		    	$('body').find('#googleTTSText').text( layout.qHyperCube.qDataPages[0].qMatrix[0][0].qText );
+		    	$element.find('.googleTTSText').text( layout.qHyperCube.qDataPages[0].qMatrix[0][0].qText );
 
 				//main player
 				$element.find('.googleTTSButton').on('click', function(){
 					if( '' !== layout.apiKey ){
-						text = $element.find('#googleTTSText').text();
+						text = $element.find('.googleTTSText').text();
 						autoPlay( layout, text );
 					}
 				});
