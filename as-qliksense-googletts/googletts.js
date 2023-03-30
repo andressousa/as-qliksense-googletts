@@ -78,17 +78,21 @@ function(
 			    	//propagate player to all objects
 					if( 'Y' == layout.propagatePlayer && '' !== layout.apiKey ){
 						$('body').find('.qv-object').each(function(){
-						    var t = '', s = '', f = '', text = '', btn = '';
+						    var t = '', s = '', f = '', F = '', n = '', text = '', btn = '';
 
 						    //get title, subtitle and footer texts
 						    t = $(this).find('.qv-object-title-text').text();
 						    s = $(this).find('.qv-object-subtitle').text();
 						    f = $(this).find('.qv-object-footnote').text();
+						    F = $(this).closest('.object-wrapper').find('.qv-object-footnote').text();
+						    n = $(this).find('.narrativesWidget').text();
 
 						    //concatenate texts
 						    if( t != '' ) text += t + '. ';
 						    if( s != '' ) text += s + '. ';
-						    if( f != '' ) text += f + '.';
+						    if( f != '' ) text += f + '. ';
+						    if( F != '' ) text += F + '. ';
+						    if( n != '' ) text += n + '. ';
 						    
 						    //text if have some text, then create button
 						    if( text != '' ){
@@ -99,18 +103,28 @@ function(
 
 						//player trigger
 						$('body').on('click', '.google-tts-play', function(e){
+						    var t = '', s = '', f = '', F = '', n = '', text = '', btn = '';
 							e.stopImmediatePropagation();
-						    var t = '', s = '', f = '', text = '', btn = '';
 						    t = $(this).closest('.object-wrapper').find('.qv-object-title-text').text();
 						    s = $(this).closest('.object-wrapper').find('.qv-object-subtitle').text();
 						    f = $(this).closest('.object-wrapper').find('.qv-object-footnote').text();
+						    n = $(this).closest('.object-wrapper').find('.narrativesWidget').text();
 						    if( t != '' ) text += t + '. ';
 						    if( s != '' ) text += s + '. ';
-						    if( f != '' ) text += f + '.';
+						    if( f != '' ) text += f + '. ';
+						    if( n != '' ) text += n + '. ';
 						    text != '' ? autoPlay( layout, text ) : false;
 						});
 					}
+
+					if( 'Y' == layout.autoPlay ){
+						setTimeout( () => {
+							$element.find('.googleTTSButton').trigger('click');
+						}, layout.delayPlayer );
+					}
 				}, 500);
+
+	
 	 			
 		    	//show/hide main text
 				if( 'N' == layout.showText ){
@@ -129,6 +143,10 @@ function(
 						autoPlay( layout, text );
 					}
 				});
+
+
+
+
 			}
 
 			return qlik.Promise.resolve();

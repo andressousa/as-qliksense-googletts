@@ -265,6 +265,27 @@ function () {
 		]		
 	};
 
+
+	// Autoplay
+ 	var autoPlay = {
+		type: 			"string",
+		component: 		"dropdown",
+		label: 			"Play on reload",
+		ref: 			"autoPlay",
+		defaultValue: 	"N",
+		options:[
+			 {value: "Y", label: "YES"}
+			,{value: "N", label: "NO"}
+		]		
+	};
+
+	var delayPlayer = {
+		type: 		"string",
+		label: 		"Delay",
+		ref: 		"delayPlayer",
+		defaultValue: 	"10"
+	};
+
     return {
         type: "items",
         component: "accordion",
@@ -291,6 +312,8 @@ function () {
 					ssmlGender: ssmlGender,
 					effectsProfileId: effectsProfileId,
 					showText: showText,
+					autoPlay: autoPlay,
+					delayPlayer: delayPlayer,
 					propagatePlayer: propagatePlayer
 				}
 			}

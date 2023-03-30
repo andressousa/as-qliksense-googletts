@@ -3,7 +3,7 @@
     "description": "AS Google TTS is a visualization extension for Qlik Sense that converts some text snippets into audio for ease of use for accessibility by people with low vision.",
     "icon": "extension",
     "type": "visualization",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "author": "André Sousa",
     "homepage": "https://www.linkedin.com/in/andresantossousa/",
     "keywords": "qlik-sense, visualization, google TTS",
